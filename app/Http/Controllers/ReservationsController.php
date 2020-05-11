@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ReservationsStoreRequest;
+use App\Http\Requests\ReservationsUpdateRequest;
 use App\Reservation;
 use App\Movie;
 use Illuminate\Http\Request;
@@ -90,9 +91,16 @@ class ReservationsController extends Controller
      * @param  \App\Reservation  $reservation
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Reservation $reservation)
+    public function update(ReservationsUpdateRequest $request, Reservation $reservation)
     {
-        //
+        //updaten van de database door middel van de edit methode
+        $reservation->movie_id =$request->movie_id;
+        $reservation->time = $request->time;
+        $reservation->quantity = $request->quantity;
+
+        $reservation->save();
+
+        return redirect()->route('reservations.index')->with('message', 'Reservering geupdatet');
     }
 
     /**

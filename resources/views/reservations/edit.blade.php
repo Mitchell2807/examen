@@ -38,13 +38,13 @@
         @csrf
 
         <div class="form-group">
-            <label for="username">Username</label>
+            <label for="username">Gebruikersnaam</label>
             <input type="text" name="username" class=form-control id="username"
                 aria-describedby="usernameHelp" value="{{$reservation->user->name}}" disabled="disabled">
         </div>
 
         <div class="form-group">
-            <label for="movie_id">Movie</label>
+            <label for="movie_id">Film</label>
             <select id="movie_id" name = "movie_id" class = "form-control">
             @foreach($movies as $id => $movie)
             <option id="movie" value="{{$id}}">{{$movie}}</option>
@@ -53,19 +53,19 @@
         </div>
 
         <div class="form-group">
-        <label for="amount">Ticket amount</label>
-        <select class="form-control" name="amount" id="amount" rows="3">
-        <option id="amount" value="1">{{$reservation->amount}}</option>
-        <option id="amount" value="1">1</option>
-        <option id="amount" value="2">2</option>
-        <option id="amount" value="3">3</option>
-        <option id="amount" value="4">4</option>
-        <option id="amount" value="5">5</option>
-        <option id="amount" value="6">6</option>
-        <option id="amount" value="7">7</option>
-        <option id="amount" value="8">8</option>
-        <option id="amount" value="9">9</option>
-        <option id="amount" value="10">10</option>
+        <label for="quantity">Aantal tickets</label>
+        <select class="form-control" name="quantity" id="quantity" rows="3">
+        <option id="quantity" value="1">{{$reservation->quantity}}</option>
+        <option id="quantity" value="1">1</option>
+        <option id="quantity" value="2">2</option>
+        <option id="quantity" value="3">3</option>
+        <option id="quantity" value="4">4</option>
+        <option id="quantity" value="5">5</option>
+        <option id="quantity" value="6">6</option>
+        <option id="quantity" value="7">7</option>
+        <option id="quantity" value="8">8</option>
+        <option id="quantity" value="9">9</option>
+        <option id="quantity" value="10">10</option>
         </select>
     </div>
 
