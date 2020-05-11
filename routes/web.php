@@ -30,3 +30,9 @@ Route::get('/reservations/{reservation}/delete', 'ReservationsController@delete'
 Route::resource('/reservations', 'ReservationsController');
 
 
+//routes voor middleware
+Route::group(['middleware' => ['role:admin|customer']], function () {
+    Route::get('/reservations/{reservation}/delete', 'ReservationsController@delete')
+    ->name('reservations.delete');
+    Route::resource('/reservations', 'ReservationsController');
+});

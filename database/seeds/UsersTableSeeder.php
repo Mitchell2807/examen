@@ -17,6 +17,16 @@ class UsersTableSeeder extends Seeder
 
         factory(App\User::class, 1)->create(['name' => 'admin',
         'email' => 'admin@mail.nl',
-        'password' => bcrypt('admin123')]);
+        'password' => bcrypt('admin123')])
+        ->each(function (User $user){
+            $user->assignRole('admin');
+        });
+
+        factory(App\User::class, 1)->create(['name' => 'customer',
+        'email' => 'customer@mail.nl',
+        'password' => bcrypt('customer123')])
+        ->each(function (User $user){
+            $user->assignRole('customer');
+        });
     }
 }
