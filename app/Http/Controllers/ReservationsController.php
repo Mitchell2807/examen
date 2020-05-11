@@ -66,7 +66,8 @@ class ReservationsController extends Controller
      */
     public function show(Reservation $reservation)
     {
-        //
+        //details bekijken van een reservering.
+        return view('reservations.show', compact('reservation'));
     }
 
     /**
@@ -77,7 +78,9 @@ class ReservationsController extends Controller
      */
     public function edit(Reservation $reservation)
     {
-        //
+        //bewerken van een reservering
+        $movies= Movie::pluck('moviename', 'id');
+        return view('reservations.edit', compact('reservation', 'movies'));
     }
 
     /**
