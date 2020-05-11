@@ -59,7 +59,8 @@
                 <td><a href="{{ route('reservations.edit',
                     ['reservation' => $reservation->id]) }}">Bewerken</a></td>
 
-
+                    <td><a href="{{ route('reservations.delete',
+                    ['reservation' => $reservation->id]) }}">Verwijderen</a></td>
 
             </tr>
 

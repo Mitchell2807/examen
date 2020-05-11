@@ -109,8 +109,18 @@ class ReservationsController extends Controller
      * @param  \App\Reservation  $reservation
      * @return \Illuminate\Http\Response
      */
+    public function delete(Reservation $reservation)
+    {
+        //terugkeren naar de delete view.
+        return view('reservations.delete', compact('reservation'));
+    }
+
     public function destroy(Reservation $reservation)
     {
-        //
+        //verwijderen van een reservering.
+        $reservation->delete();
+
+        //terugkeren naar de index methode nadat een reservering is verwijderd.
+        return redirect()->route('reservations.index')->with('message', 'reservering verwijderd');
     }
 }

@@ -22,5 +22,11 @@ Auth::routes();
 //homepagina
 Route::get('/home', 'HomeController@index')->name('home');
 
+
+//verwijzing naar delete methode binnen de controller van de reserveringen.
+Route::get('/reservations/{reservation}/delete', 'ReservationsController@delete')
+->name('reservations.delete');
 //reserveringscontroller
 Route::resource('/reservations', 'ReservationsController');
+
+
