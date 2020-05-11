@@ -57,18 +57,18 @@
     </div>
 
     <div class="form-group">
-        <label for="amount">Aantal tickets</label>
-        <select class="form-control" name="amount" id="amount" rows="3">
-        <option id="amount" value="1">1</option>
-        <option id="amount" value="2">2</option>
-        <option id="amount" value="3">3</option>
-        <option id="amount" value="4">4</option>
-        <option id="amount" value="5">5</option>
-        <option id="amount" value="6">6</option>
-        <option id="amount" value="7">7</option>
-        <option id="amount" value="8">8</option>
-        <option id="amount" value="9">9</option>
-        <option id="amount" value="10">10</option>
+        <label for="quantity">Aantal tickets</label>
+        <select class="form-control" name="quantity" id="quantity" rows="3">
+        <option id="quantity" value="1">1</option>
+        <option id="quantity" value="2">2</option>
+        <option id="quantity" value="3">3</option>
+        <option id="quantity" value="4">4</option>
+        <option id="quantity" value="5">5</option>
+        <option id="quantity" value="6">6</option>
+        <option id="quantity" value="7">7</option>
+        <option id="quantity" value="8">8</option>
+        <option id="quantity" value="9">9</option>
+        <option id="quantity" value="10">10</option>
         </select>
     </div>
 

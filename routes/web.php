@@ -12,13 +12,15 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+//welkomstpagina
 Route::get('/', function () {
     return view('welcome');
 });
 
 Auth::routes();
 
+//homepagina
 Route::get('/home', 'HomeController@index')->name('home');
 
+//reserveringscontroller
 Route::resource('/reservations', 'ReservationsController');

@@ -17,5 +17,5 @@ class Reservation extends Model
     }
 
     //deze velden moeten ingevuld zijn.
-    protected $fillable = ['time', 'amount'];
+    protected $fillable = ['time', 'quantity'];
 }

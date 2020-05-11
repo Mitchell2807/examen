@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ReservationsStoreRequest;
 use App\Reservation;
 use App\Movie;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ReservationsController extends Controller
 {
@@ -40,10 +42,20 @@ class ReservationsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ReservationsStoreRequest $request)
     {
-        //
+        //nieuwe reservering maken
+        $reservation = new Reservation();
+        //attributen van de reservering meegeven
+        $reservation->user_id = Auth::user()->id;
+        $reservation->movie_id = $request->movie_id;
+        $reservation->time = $request->time;
+        $reservation->quantity = $request->quantity;
+        //opslaan van nieuwe reservering in database
+        $reservation->save();
 
+        //terugkeren naar de reserveringen index met het bericht.
+        return redirect()->route('reservations.index')->with('message', 'Reservering geplaatst');
     }
 
     /**
