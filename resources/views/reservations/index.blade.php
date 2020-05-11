@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <h1 class="mt-5">Reservations</h1>
+    <h1 class="mt-5">Reserveringen</h1>
 
     @if(session('message'))
         <div class="alert alert-success">
@@ -14,11 +14,11 @@
         <ul class="nav nav-tabs">
 
             <li class="nav-item">
-                <a class="nav-link active" href="{{ route('reservations.index') }}">Index</a>
+                <a class="nav-link active" href="{{ route('reservations.index') }}">Overzicht</a>
             </li>
 
             <li  class="nav-item">
-            <a class="nav-link" href="{{ route('reservations.create') }}">Create</a>
+            <a class="nav-link" href="{{ route('reservations.create') }}">Maken</a>
             </li>
 
 
@@ -55,14 +55,12 @@
                 <td><a href="{{ route('reservations.show',
                     ['reservation' => $reservation->id]) }}">Details</a></td>
 
-                    @can('edit reservations')
+
                 <td><a href="{{ route('reservations.edit',
-                    ['reservation' => $reservation->id]) }}">Edit</a></td>
-                    @endcan
-                    @can('delete reservations')
-                    <td><a href="{{ route('reservations.delete',
-                    ['reservation' => $reservation->id]) }}">Delete</a></td>
-                    @endcan
+                    ['reservation' => $reservation->id]) }}">Bewerken</a></td>
+
+
+
             </tr>
 
 
