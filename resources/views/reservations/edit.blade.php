@@ -1,5 +1,4 @@
-<!-- Bewerkpagina van de reserveringen -->
-<!-- @can voor permissies -->
+
 @extends('layout.layout')
 
 @section('content')

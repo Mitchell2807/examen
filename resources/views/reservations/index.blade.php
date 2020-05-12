@@ -1,5 +1,3 @@
-<!-- Overzicht van de reserveringen -->
-<!-- @can voor permissies -->
 @extends('layout.layout')
 
 @section('content')
@@ -78,9 +76,6 @@
             @endif
             @endauth
         @endforeach
-
-
-
 
     </tbody>
     </table>
