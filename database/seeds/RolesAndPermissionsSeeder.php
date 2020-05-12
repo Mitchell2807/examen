@@ -23,7 +23,7 @@ class RolesAndPermissionsSeeder extends Seeder
 
         //rollen maken en hier permissies aan koppelen.
         $role = Role::create(['name' => 'customer']);
-        $role->givePermissionTo('create reservations', 'delete reservations');
+        $role->givePermissionTo('create reservations', 'delete reservations','edit reservations');
 
         $role = Role::create(['name' => 'admin']);
         $role->givePermissionTo(Permission::all());

@@ -1,3 +1,5 @@
+<!-- maken van de reservering -->
+<!-- @can voor permissies -->
 @extends('layout.layout')
 
 @section('content')
@@ -13,7 +15,7 @@
             </ul>
         </div>
     @endif
-
+<!-- Navigatie -->
     <nav class="nav">
         <ul class="nav nav-tabs">
 
@@ -21,16 +23,17 @@
                 <a class="nav-link" href="{{ route('reservations.index') }}">Overzicht</a>
             </li>
 
-
+            @can('create reservations')
             <li  class="nav-item">
             <a class="nav-link active" href="{{ route('reservations.create') }}">Maken</a>
             </li>
-
+@endcan
 
         </ul>
     </nav>
 
-
+    <!-- Formulier -->
+    @can('create reservations')
     <form method="POST" action="/reservations">
 
     @csrf
@@ -76,5 +79,10 @@
     <button type="submit" class="btn btn-primary">Gereed</button>
 
     </form>
+    @else
+    <div class="alert-danger">
+        <p>You have no access</p>
+    </div>
+    @endcan
 
 @endsection

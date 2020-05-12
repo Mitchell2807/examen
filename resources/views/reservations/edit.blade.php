@@ -1,3 +1,5 @@
+<!-- Bewerkpagina van de reserveringen -->
+<!-- @can voor permissies -->
 @extends('layout.layout')
 
 @section('content')
@@ -13,26 +15,29 @@
             </ul>
         </div>
     @endif
-
+<!-- Navigatie -->
     <nav class="nav">
         <ul class="nav nav-tabs">
 
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('reservations.index') }}">Index</a>
             </li>
-            <li  class="nav-item">
-            <a class="nav-link" href="{{ route('reservations.create') }}">Create</a>
-            </li>
 
+            @can('create reservations')
+            <li  class="nav-item">
+            <a class="nav-link" href="{{ route('reservations.create') }}">Maken</a>
+            </li>
+            @endcan
+            @can('edit reservations')
             <li  class="nav-item">
             <a class="nav-link active" href="{{ route('reservations.edit',
-                                        ['reservation' => $reservation->id]) }}">Edit</a>
+                                        ['reservation' => $reservation->id]) }}">Bewerken</a>
             </li>
 
         </ul>
     </nav>
 
-
+<!-- Formulier -->
     <form method="POST" action="/reservations/{{$reservation->id}}">
         @method('PATCH')
         @csrf
@@ -69,8 +74,8 @@
         </select>
     </div>
 
-        <button type="submit" class="btn btn-primary">Update</button>
+        <button type="submit" class="btn btn-primary">Updaten</button>
 
     </form>
-
+@endif
 @endsection

@@ -1,10 +1,12 @@
+<!-- Showpagina van de reserveringen -->
+<!-- @can voor permissies -->
 @extends('layout.layout')
 
 @section('content')
 
 <br>
     <h1 class="mt-5">Reservering</h1>
-
+<!-- Navigatie -->
     <nav class="nav">
         <ul class="nav nav-tabs">
 
@@ -23,7 +25,7 @@
 
         </ul>
     </nav>
-
+<!-- details -->
     <div class="card">
   <div class="card-header">
   ReserveringsDetails

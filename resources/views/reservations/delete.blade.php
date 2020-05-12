@@ -1,3 +1,5 @@
+<!-- verwijderpagina van de reserveringen -->
+<!-- @can voor permissies -->
 @extends('layout.layout')
 
 @section('content')
@@ -13,29 +15,33 @@
             </ul>
         </div>
     @endif
-
+<!-- Navigatie -->
     <nav class="nav">
         <ul class="nav nav-tabs">
 
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('reservations.index') }}">Index</a>
             </li>
-
+            @can('create reservations')
             <li  class="nav-item">
             <a class="nav-link" href="{{ route('reservations.create') }}">Maken</a>
             </li>
+            @endcan
+            @can('delete reservations')
 
             <li  class="nav-item">
             <a class="nav-link active" href="{{ route('reservations.delete',
                                         ['reservation' => $reservation->id]) }}">Verwijderen</a>
             </li>
+            @endcan
         </ul>
     </nav>
-
+    @can('delete reservations')
     <form method="POST" action="/reservations/{{$reservation->id}}">
         @method('DELETE')
         @csrf
 
+        <!-- Formulier -->
         <div class="form-group">
             <label for="username">Gebruikersnaam</label>
             <input type="text" name="username" class=form-control id="username"
@@ -77,4 +83,5 @@
         <button type="submit" class="btn btn-primary">Delete</button>
 
     </form>
+    @endcan
 @endsection
