@@ -28,9 +28,9 @@ class ReservationsController extends Controller
     {
         //laten zien van de reserveringen en films.
         $reservations = Reservation::all();
-        $movies = Movie::all();
 
-        return view('reservations.index', compact('reservations','movies'));
+
+        return view('reservations.index', compact('reservations'));
     }
 
     /**
@@ -41,7 +41,7 @@ class ReservationsController extends Controller
     public function create()
     {
         //het maken van een nieuwe reservering.
-        $movies = Movie::pluck('moviename', 'id')->all();
+        $movies = Movie::pluck('movieName', 'id')->all();
         return view('reservations.create', compact('movies'));
     }
 
