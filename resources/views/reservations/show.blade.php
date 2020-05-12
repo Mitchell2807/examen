@@ -32,11 +32,11 @@
   <div class="card-body">
     <h2 class="card-title">{{ $reservation->user->name }}</h2>
     <p class="card-title"><strong>Filmnaam:</strong></p>
-    <p class="card-text">{{ $reservation->movie->moviename }}</p>
+    <p class="card-text">{{ $reservation->movie->movieName }}</p>
     <p class="card-title"><strong>Tijd:</strong></p>
-    <p class="card-text">{{ $reservation->begin }}</p>
+    <p class="card-text">{{ $reservation->time }}</p>
     <p class="card-title"><strong>Aantal tickets:</strong></p>
-    <p class="card-text">{{ $reservation->amount }}</p>
+    <p class="card-text">{{ $reservation->quantity }}</p>
     <p class="card-title"><strong>Prijs per ticket:</strong></p>
     <p class="card-text">€{{ $reservation->movie->price }}</p>
     <p class="card-title"><strong>Totaalprijs:</strong></p>
