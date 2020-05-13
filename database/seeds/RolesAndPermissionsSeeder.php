@@ -21,6 +21,8 @@ class RolesAndPermissionsSeeder extends Seeder
         Permission::create(['name' => 'edit reservations']);
         Permission::create(['name' => 'delete reservations']);
 
+        Permission::create(['name' => 'create movies']);
+
         //rollen maken en hier permissies aan koppelen.
         $role = Role::create(['name' => 'customer']);
         $role->givePermissionTo('create reservations', 'delete reservations','edit reservations');

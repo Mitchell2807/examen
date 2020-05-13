@@ -16,6 +16,11 @@
             <li class="nav-item">
                 <a class="nav-link active" href="{{ route('movies.index') }}">Overzicht</a>
             </li>
+            @can('create movies')
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('movies.create') }}">Maken</a>
+            </li>
+            @endcan
         </ul>
     </nav>
 

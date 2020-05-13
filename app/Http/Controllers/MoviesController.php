@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Movie;
 use App\Reservation;
 use Illuminate\Http\Request;
+use App\Http\Requests\MoviesStoreRequest;
 
 class MoviesController extends Controller
 {
@@ -29,6 +30,7 @@ class MoviesController extends Controller
     public function create()
     {
         //
+        return view('movies.create');
     }
 
     /**
@@ -37,9 +39,19 @@ class MoviesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(MoviesStoreRequest $request)
     {
         //
+        $movie = new Movie();
+        //attributen van de film meegeven
+        $movie->movieName = $request->movieName;
+        $movie->description = $request->description;
+        $movie->price = $request->price;
+        //opslaan van nieuwe film in database
+        $movie->save();
+
+        //terugkeren naar de films index met het bericht.
+        return redirect()->route('movies.index')->with('message', 'Film gemaakt');
     }
 
     /**
