@@ -76,6 +76,10 @@
                                 </a>
 
 
+                                    <a class="dropdown-item" href="{{ route('users.edit',
+                                        ['user' => Auth::user()->id]) }}">Mijn gegevens</a>
+
+
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

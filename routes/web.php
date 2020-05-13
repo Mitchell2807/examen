@@ -32,6 +32,9 @@ Route::resource('/reservations', 'ReservationsController');
 //moviescontroller
 Route::resource('/movies', 'MoviesController');
 
+//userscontroller
+Route::resource('/users', 'UsersController');
+
 
 //routes voor middleware
 Route::group(['middleware' => ['role:admin|customer']], function () {
