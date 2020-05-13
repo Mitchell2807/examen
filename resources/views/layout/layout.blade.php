@@ -51,6 +51,9 @@
         <li class="nav-item">
           <a class="nav-link" href="{{'/reservations'}}">Reserveringen</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{'/movies'}}">Films</a>
+        </li>
 
       </ul>
       <ul class="navbar-nav ml-auto">

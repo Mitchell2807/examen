@@ -29,6 +29,9 @@ Route::get('/reservations/{reservation}/delete', 'ReservationsController@delete'
 //reserveringscontroller
 Route::resource('/reservations', 'ReservationsController');
 
+//moviescontroller
+Route::resource('/movies', 'MoviesController');
+
 
 //routes voor middleware
 Route::group(['middleware' => ['role:admin|customer']], function () {
