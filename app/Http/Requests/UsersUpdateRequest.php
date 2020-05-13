@@ -27,7 +27,7 @@ class UsersUpdateRequest extends FormRequest
             //
             'name' => 'required',
             'email' => 'required',
-            'phone' => 'required'
+            'phone' => 'max:255'
         ];
     }
 }
